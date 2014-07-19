@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var wemore = require('../')
+  , TIMEOUT = 1500; // impatience
+  
+var minLen = 2;
+if (process.argv[0] == 'node')
+    minLen++;
+
+if (process.argv.length < minLen)
+    return console.error("usage: wemore-toggle <friendlyName>");
+
+var friendlyName = process.argv.slice(minLen-1).join(' ');
+if (!friendlyName)
+    return console.error("invalid friendlyName");
+
+wemore.Discover(friendlyName, TIMEOUT)
+.then(function(device) {
+    return device.toggleBinaryState();
+})
+.then(function() {
+    console.log("Success!");
+})
+.fail(function(err) {
+    console.error("Couldn't find device", err);
+});
+

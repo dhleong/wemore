@@ -1,0 +1,32 @@
+{
+  "name": "wemore",
+  "version": "0.0.1",
+  "description": "A more awesome library for Belkin WeMo",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && mocha *js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dhleong/wemore"
+  },
+  "bin": {
+    "wemore-toggle": "./bin/wemore-toggle"
+  },
+  "keywords": [
+    "belkin",
+    "wemo"
+  ],
+  "author": "Daniel Leong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhleong/wemore/issues"
+  },
+  "homepage": "https://github.com/dhleong/wemore",
+  "dependencies": {
+    "node-ssdp": "^2.0.1",
+    "q": "^1.0.1",
+    "request": "^2.37.0",
+    "xml2js": "^0.4.4"
+  }
+}
