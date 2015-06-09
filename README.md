@@ -13,10 +13,12 @@ Toggle the first device found:
 ```javascript
 var wemore = require('wemore')
 
+// with no args, a Discovery object is returned
+//  that emits device events as they're discovered
 var discovery = wemore.Discover()
 .on('device', function(device) {
     device.toggleBinaryState();
-    discovery.close();
+    discovery.close(); // stop discovering
 });
 ```
 
@@ -25,6 +27,7 @@ Toggling a device by its friendly name:
 ```javascript
 var wemore = require('wemore')
 
+// when the friendly name is provided, a Promise is returned
 wemore.Discover('Lights')
 .then(function(device) {
     return device.toggleBinaryState();
@@ -34,6 +37,35 @@ wemore.Discover('Lights')
 })
 .fail(function(err) {
     console.error("Couldn't find device", err);
+});
+
+```
+
+#### Emulate Devices
+
+Wemore also provides a facility for emulating devices, allowing you to
+transparently respond to toggle events from another device on the network,
+like perhaps the Amazon Echo.
+
+```javascript
+var wemore = require('wemore');
+
+// note that each device needs a separate port:
+var tv = wemore.Emulate({friendlyName: "TV", port: 9001}); // choose a port
+var stereo = wemore.Emulate({friendlyName: "Stereo"}); // automatically assigned
+
+tv.on('state', function(binaryState) {
+    console.log("TV set to=", binaryState);
+    tv.close(); // stop advertising the device
+});
+
+// also, 'on' and 'off' events corresponding to binary state
+stereo.on('on', function() {
+    console.log("Stereo turned on");
+});
+
+stereo.on('off', function() {
+    console.log("Stereo turned off");
 });
 
 ```
