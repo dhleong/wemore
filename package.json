@@ -25,9 +25,10 @@
   "homepage": "https://github.com/dhleong/wemore",
   "dependencies": {
     "ip": "^0.3.3",
-    "node-ssdp": "^2.0.1",
+    "node-ssdp": "2.2.1",
     "q": "^1.0.1",
     "request": "^2.37.0",
-    "xml2js": "^0.4.4"
+    "xml2js": "^0.4.9",
+    "xmlbuilder": "^2.6.4"
   }
 }

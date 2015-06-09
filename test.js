@@ -7,6 +7,6 @@ var wemore = require('./');
 //     console.log(device);
 // });
 
-var ps4 = wemore.Emulate({friendlyName: "playstation"});
-var tv = wemore.Emulate({friendlyName: "television"});
+wemore.Emulate({friendlyName: "playstation"});
+wemore.Emulate({friendlyName: "television"});
 
