@@ -8,5 +8,5 @@ var wemore = require('./');
 // });
 
 wemore.Emulate({friendlyName: "playstation"});
-wemore.Emulate({friendlyName: "television"});
+// wemore.Emulate({friendlyName: "television"});
 

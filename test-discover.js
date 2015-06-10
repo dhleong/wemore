@@ -12,7 +12,7 @@
 var SsdpClient = require('node-ssdp').Client
   , BELKIN_CONTROLLEE = "urn:Belkin:device:controllee:1"
   ;
-var client = new SsdpClient();
+var client = new SsdpClient({logLevel: 'TRACE'});
 client.on('response', function(resp) {
     console.log(resp);
 });
