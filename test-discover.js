@@ -10,7 +10,8 @@
 // });
 
 var SsdpClient = require('node-ssdp').Client
-  , BELKIN_CONTROLLEE = "urn:Belkin:device:controllee:1"
+  // , BELKIN_CONTROLLEE = "urn:Belkin:device:controllee:1"
+  , BELKIN_CONTROLLEE = "urn:Belkin:device:**"
   ;
 var client = new SsdpClient({logLevel: 'TRACE'});
 client.on('response', function(resp) {
