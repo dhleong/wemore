@@ -54,6 +54,11 @@ var wemore = require('wemore');
 var tv = wemore.Emulate({friendlyName: "TV", port: 9001}); // choose a port
 var stereo = wemore.Emulate({friendlyName: "Stereo"}); // automatically assigned
 
+stereo.on('listening', function() {
+    // if you want it, you can get it:
+    console.log("Stereo listening on", this.port);
+});
+
 tv.on('state', function(binaryState) {
     console.log("TV set to=", binaryState);
     tv.close(); // stop advertising the device
