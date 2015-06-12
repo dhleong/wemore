@@ -26,7 +26,6 @@
   "dependencies": {
     "ip": "^0.3.3",
     "lodash": "^3.9.3",
-    "macaddress": "^0.2.8",
     "node-ssdp": "dhleong/node-ssdp#2d8dcfa",
     "q": "^1.0.1",
     "request": "^2.37.0",
