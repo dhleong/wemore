@@ -26,7 +26,7 @@
   "dependencies": {
     "ip": "^0.3.3",
     "lodash": "^3.9.3",
-    "node-ssdp": "dhleong/node-ssdp#2d8dcfa",
+    "node-ssdp": "^2.7.0",
     "q": "^1.0.1",
     "request": "^2.37.0",
     "uuid": "^2.0.1",
