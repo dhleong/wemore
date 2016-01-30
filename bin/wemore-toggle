@@ -4,15 +4,19 @@ var wemore = require('../')
   , TIMEOUT = 1500; // impatience
   
 var minLen = 2;
-if (process.argv[0] == 'node')
+var exe = process.argv[0];
+if (exe == 'node' || exe.endsWith('/node')) {
     minLen++;
+}
 
-if (process.argv.length < minLen)
+if (process.argv.length < minLen) {
     return console.error("usage: wemore-toggle <friendlyName>");
+}
 
 var friendlyName = process.argv.slice(minLen-1).join(' ');
-if (!friendlyName)
+if (!friendlyName) {
     return console.error("invalid friendlyName");
+}
 
 wemore.Discover(friendlyName, TIMEOUT)
 .then(function(device) {
