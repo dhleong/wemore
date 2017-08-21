@@ -2,7 +2,7 @@
 
 var wemore = require('../')
   , TIMEOUT = 1500; // impatience
-  
+
 var minLen = 2;
 var exe = process.argv[0];
 if (exe == 'node' || exe.endsWith('/node')) {
