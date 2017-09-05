@@ -1,6 +1,6 @@
 {
   "name": "wemore",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A more awesome library for Belkin WeMo interactions",
   "main": "index.js",
   "scripts": {
