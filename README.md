@@ -59,21 +59,33 @@ stereo.on('listening', function() {
     console.log("Stereo listening on", this.port);
 });
 
-tv.on('state', function(binaryState) {
+tv.on('state', function(binaryState, self, sender) {
     console.log("TV set to=", binaryState);
     tv.close(); // stop advertising the device
 });
 
 // also, 'on' and 'off' events corresponding to binary state
-stereo.on('on', function() {
+stereo.on('on', function(self, sender) {
     console.log("Stereo turned on");
 });
 
-stereo.on('off', function() {
+stereo.on('off', function(self, sender) {
     console.log("Stereo turned off");
 });
-
 ```
+
+If you need information about who requested the event, it is provided as a
+"Sender object" that looks something like this:
+
+```javascript
+{
+    address: '::ffff:192.168.1.23',
+    port: 12345
+}
+```
+
+See [Socket.remoteAddress](https://nodejs.org/api/net.html#net_socket_remoteaddress)
+for more information about these values.
 
 ### Binary
 
