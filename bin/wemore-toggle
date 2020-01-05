@@ -25,7 +25,7 @@ wemore.Discover(friendlyName, TIMEOUT)
 .then(function() {
     console.log("Success!");
 })
-.fail(function(err) {
+.catch(function(err) {
     console.error("Couldn't find device", err);
 });
 
