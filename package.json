@@ -28,12 +28,12 @@
   "homepage": "https://github.com/dhleong/wemore",
   "dependencies": {
     "ip": "^1.1.5",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.15",
     "node-ssdp": "^2.9.1",
     "q": "^2.0.3",
-    "request": "^2.37.0",
-    "uuid": "^3.2.1",
-    "xml2js": "^0.4.19",
+    "request": "^2.88.0",
+    "uuid": "^3.3.2",
+    "xml2js": "^0.4.23",
     "xmlbuilder": "^9.0.7"
   }
 }
